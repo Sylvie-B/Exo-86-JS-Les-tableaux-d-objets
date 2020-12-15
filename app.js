@@ -23,7 +23,6 @@ let ford = {
     }
 }
 
-
 /**
  * Votre code commence ici !
  */
@@ -31,10 +30,18 @@ let voitures = {
     garage: 'concession',
     lieu: 'Fourmies',
     // Dans un tableau, ajouter les différentes voitures que vous possédez.
-    collection: [], // Vos voitures dans cette propriété !
+    collection: [peugeot, citroen, ford], // Vos voitures dans cette propriété !
 }
 
 // FIXME Parcourrez le tableau dans lequel vous avez placé vos objets.
-// TODO ==> invoquez la méthode ouvrirPorte pour chaque voiture de la collection.
+for (let i =0 ; i < voitures.collection.length ; i++){
+    // TODO ==> invoquez la méthode ouvrirPorte pour chaque voiture de la collection.
+    voitures.collection[i].ouvrirPorte();
+}
 
-
+let newPara = document.getElementById('newPara');
+let carColor = document.createElement('span');
+for (let i =0 ; i < voitures.collection.length ; i++){
+    carColor.innerHTML += voitures.collection[i].color + " ";
+    newPara.appendChild(carColor);
+}
